@@ -1,21 +1,41 @@
 import React from 'react';
-import CountClick from './components/CountClick'
-import HoverCount from './components/HoverCount'
-import Counter from './components/Counter'
-import RefsDemo from './components/RefsDemo'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+} from 'react-router-dom'
+import Ep1 from './components/Ep1_Counters'
+import ErrorPage from './components/ErrorPage'
+
+function PageList() {
+  const pageList = [
+    {
+      title: 'Ep1_Counter',
+      path: 'ep1'
+    }
+  ]
+  const linkList = pageList.map((page) => (
+    <Link to={page.path}>{page.title}</Link>
+  ))
+  return (
+    <div>
+      {linkList}
+    </div>
+  ) 
+}
 
 function App() {
   return (
     <div className="App">
-      <Counter
-        render={(count, incrementCount) => (
-          <CountClick count={count} incrementCount={incrementCount} />
-        )} />
-      <Counter
-        render={(count, incrementCount) => (
-          <HoverCount count={count} incrementCount={incrementCount} />
-        )} />
-      <RefsDemo />
+      <Router>
+        <Link to="/">Home</Link>
+        <Routes>
+          <Route path="/" element={<PageList />} />
+          <Route path="/ep1" element={<Ep1 />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </Router>
     </div>
   )
 }
