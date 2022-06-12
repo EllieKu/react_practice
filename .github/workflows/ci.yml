@@ -10,7 +10,8 @@ jobs:
   build-and-deploy:
 
     runs-on: ubuntu-latest
-
+    timeout-minutes: 5000
+    
     steps:
       - uses: actions/checkout@v2
 
