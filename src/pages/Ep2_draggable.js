@@ -1,5 +1,5 @@
 import React from "react";
-import './Ep2_Draggable.css'
+import './Ep2_draggable.css'
 
 class Main extends React.Component {
   constructor(props) {

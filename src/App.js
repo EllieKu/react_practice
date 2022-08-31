@@ -5,19 +5,19 @@ import {
   Route,
   Link,
 } from 'react-router-dom'
-import ErrorPage from './components/ErrorPage'
-import Ep1 from './components/Ep1_Counters'
-import Ep2 from './components/Ep2_Draggable'
+import ErrorPage from './pages/ErrorPage'
+import Ep1Counters from './pages/Ep1_counters'
+import Ep2Draggable from './pages/Ep2_draggable'
 
 function PageList() {
   const pageList = [
     {
       title: 'Ep1_Counter',
-      path: 'ep1'
+      path: 'ep1_counter'
     },
     {
-      title: 'Ep2_Draggabler',
-      path: 'ep2'
+      title: 'Ep2_Draggable',
+      path: 'ep2_draggable'
     }
   ]
   const linkList = pageList.map((page) => (
@@ -37,8 +37,8 @@ function App() {
         <Link to="/">Home</Link>
         <Routes>
           <Route path="/" element={<PageList />} />
-          <Route path="/ep1" element={<Ep1 />} />
-          <Route path="/ep2" element={<Ep2 />} />
+          <Route path="/ep1_counter" element={<Ep1Counters />} />
+          <Route path="/ep2_draggable" element={<Ep2Draggable />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
