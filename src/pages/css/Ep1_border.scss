@@ -1,0 +1,46 @@
+$borderColor: #03a9f3;
+$width: 160px;
+$height: 100px;
+
+%div-set {
+  width: $width;
+  height: $height;
+  text-align: center;
+  cursor: pointer
+}
+.border1 {
+  @extend %div-set;
+
+  position: relative;
+  border: 1px solid $borderColor;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -5px;
+    left: -5px;
+    border-top: 1px solid $borderColor;
+    border-left: 1px solid $borderColor;
+    transition: .3s ease-in-out;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: -5px;
+    right: -5px;
+    border-bottom: 1px solid $borderColor;
+    border-right: 1px solid $borderColor;
+    transition: .3s ease-in-out;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: calc($width + 9px);
+    height: calc($height + 9px);
+  }
+}

@@ -7,9 +7,10 @@ import {
 } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home'
-import Ep1Counters from './pages/Ep1_counters'
-import Ep2Draggable from './pages/Ep2_draggable'
-import CssBorder from './pages/Css_border'
+import Ep1Counters from './pages/react/Ep1_counters'
+import Ep2Draggable from './pages/react/Ep2_draggable'
+import Ep3UseReducer from './pages/react/Ep3_useReducer'
+import Ep1Border from './pages/css/Ep1_border'
 
 const pageList = [
   {
@@ -18,15 +19,19 @@ const pageList = [
   },
   {
     title: 'Ep1 Counter',
-    path: 'ep1_counter'
+    path: '/react/ep1_counter'
   },
   {
     title: 'Ep2 Draggable',
-    path: 'ep2_draggable'
+    path: '/react/ep2_draggable'
   },
   {
-    title: 'Css Border',
-    path: 'css_border'
+    title: 'Ep3 UseReducer',
+    path: '/react/ep3_useReducer'
+  },
+  {
+    title: 'Ep1 Border',
+    path: '/css/ep1_border'
   }
 ]
 
@@ -51,9 +56,10 @@ function App() {
         <div className="route">
           <Routes>
             <Route path="*" element={<Home />} />
-            <Route path="/ep1_counter" element={<Ep1Counters />} />
-            <Route path="/ep2_draggable" element={<Ep2Draggable />} />
-            <Route path="/css_border" element={<CssBorder />} />
+            <Route path="/react/ep1_counter" element={<Ep1Counters />} />
+            <Route path="/react/ep2_draggable" element={<Ep2Draggable />} />
+            <Route path="/react/ep3_useReducer" element={<Ep3UseReducer />} />
+            <Route path="/css/ep1_border" element={<Ep1Border />} />
           </Routes>
         </div>
       </Router>
