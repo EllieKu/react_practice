@@ -10,6 +10,7 @@ import Home from './pages/Home'
 import Ep1Counters from './pages/react/Ep1_counters'
 import Ep2Draggable from './pages/react/Ep2_draggable'
 import Ep3UseReducer from './pages/react/Ep3_useReducer'
+import Ep4EffectHook from './pages/react/Ep4_effectHook'
 import Ep1Border from './pages/css/Ep1_border'
 
 const pageList = [
@@ -30,9 +31,13 @@ const pageList = [
     path: '/react/ep3_useReducer'
   },
   {
+    title: 'Ep4 Effect Hook',
+    path: 'ep4_effectHook'
+  },
+  {
     title: 'Ep1 Border',
     path: '/css/ep1_border'
-  }
+  },
 ]
 
 function Sidebar() {
@@ -59,6 +64,7 @@ function App() {
             <Route path="/react/ep1_counter" element={<Ep1Counters />} />
             <Route path="/react/ep2_draggable" element={<Ep2Draggable />} />
             <Route path="/react/ep3_useReducer" element={<Ep3UseReducer />} />
+            <Route path="/react/ep4_effectHook"  element={<Ep4EffectHook />} />
             <Route path="/css/ep1_border" element={<Ep1Border />} />
           </Routes>
         </div>
