@@ -5,42 +5,69 @@ import {
   Route,
   Link,
 } from 'react-router-dom'
-import ErrorPage from './pages/ErrorPage'
-import Ep1Counters from './pages/Ep1_counters'
-import Ep2Draggable from './pages/Ep2_draggable'
+import './App.css'
+import Home from './pages/Home'
+import Ep1Counters from './pages/react/Ep1_counters'
+import Ep2Draggable from './pages/react/Ep2_draggable'
+import Ep3UseReducer from './pages/react/Ep3_useReducer'
+import Ep4EffectHook from './pages/react/Ep4_effectHook'
+import Ep1Border from './pages/css/Ep1_border'
 
-function PageList() {
-  const pageList = [
-    {
-      title: 'Ep1_Counter',
-      path: 'ep1_counter'
-    },
-    {
-      title: 'Ep2_Draggable',
-      path: 'ep2_draggable'
-    }
-  ]
-  const linkList = pageList.map((page) => (
-    <Link key={page.path} to={page.path}>{page.title}</Link>
-  ))
+const pageList = [
+  {
+    title: 'Home',
+    path: '/'
+  },
+  {
+    title: 'Ep1 Counter',
+    path: '/react/ep1_counter'
+  },
+  {
+    title: 'Ep2 Draggable',
+    path: '/react/ep2_draggable'
+  },
+  {
+    title: 'Ep3 UseReducer',
+    path: '/react/ep3_useReducer'
+  },
+  {
+    title: 'Ep4 Effect Hook',
+    path: 'ep4_effectHook'
+  },
+  {
+    title: 'Ep1 Border',
+    path: '/css/ep1_border'
+  },
+]
+
+function Sidebar() {
   return (
-    <div>
-      {linkList}
-    </div>
-  ) 
+    <ul className="sidebar">
+      {
+        pageList.map((page) => 
+          <li key={page.title}>
+            <Link key={page.path} to={page.path}>{page.title}</Link>
+          </li>
+      )}
+    </ul>
+  )
 }
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Router>
-        <Link to="/">Home</Link>
-        <Routes>
-          <Route path="/" element={<PageList />} />
-          <Route path="/ep1_counter" element={<Ep1Counters />} />
-          <Route path="/ep2_draggable" element={<Ep2Draggable />} />
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
+        <Sidebar />
+        <div className="route">
+          <Routes>
+            <Route path="*" element={<Home />} />
+            <Route path="/react/ep1_counter" element={<Ep1Counters />} />
+            <Route path="/react/ep2_draggable" element={<Ep2Draggable />} />
+            <Route path="/react/ep3_useReducer" element={<Ep3UseReducer />} />
+            <Route path="/react/ep4_effectHook"  element={<Ep4EffectHook />} />
+            <Route path="/css/ep1_border" element={<Ep1Border />} />
+          </Routes>
+        </div>
       </Router>
     </div>
   )
