@@ -16,27 +16,33 @@ import Ep1Border from './pages/css/Ep1_border'
 const pageList = [
   {
     title: 'Home',
-    path: '/'
+    path: '/',
+    element: <Home />,
   },
   {
     title: 'Ep1 Counter',
-    path: '/react/ep1_counter'
+    path: '/react/ep1_counter',
+    element: <Ep1Counters />,
   },
   {
     title: 'Ep2 Draggable',
-    path: '/react/ep2_draggable'
+    path: '/react/ep2_draggable',
+    element: <Ep2Draggable />,
   },
   {
     title: 'Ep3 UseReducer',
-    path: '/react/ep3_useReducer'
+    path: '/react/ep3_useReducer',
+    element: <Ep3UseReducer />,
   },
   {
     title: 'Ep4 Effect Hook',
-    path: 'ep4_effectHook'
+    path: '/react/ep4_effectHook',
+    element: <Ep4EffectHook />,
   },
   {
     title: 'Ep1 Border',
-    path: '/css/ep1_border'
+    path: '/css/ep1_border',
+    element: <Ep1Border />,
   },
 ]
 
@@ -60,12 +66,7 @@ function App() {
         <Sidebar />
         <div className="route">
           <Routes>
-            <Route path="*" element={<Home />} />
-            <Route path="/react/ep1_counter" element={<Ep1Counters />} />
-            <Route path="/react/ep2_draggable" element={<Ep2Draggable />} />
-            <Route path="/react/ep3_useReducer" element={<Ep3UseReducer />} />
-            <Route path="/react/ep4_effectHook"  element={<Ep4EffectHook />} />
-            <Route path="/css/ep1_border" element={<Ep1Border />} />
+            { pageList.map((el, index) => <Route path={el.path} key={index} element={el.element} />)}
           </Routes>
         </div>
       </Router>
