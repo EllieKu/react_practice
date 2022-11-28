@@ -5,12 +5,13 @@ import {
   Route,
   Link,
 } from 'react-router-dom'
-import './App.css'
+import './App.scss'
 import Home from './pages/Home'
 import Ep1Counters from './pages/react/Ep1_counters'
 import Ep2Draggable from './pages/react/Ep2_draggable'
 import Ep3UseReducer from './pages/react/Ep3_useReducer'
-import Ep4EffectHook from './pages/react/Ep4_effectHook'
+import Ep4UseEffect from './pages/react/Ep4_useEffect'
+import Ep5UseCallbackAndUseMemo from './pages/react/Ep5_useCallback_and_useMemo'
 import Ep1Border from './pages/css/Ep1_border'
 
 const pageList = [
@@ -35,9 +36,14 @@ const pageList = [
     element: <Ep3UseReducer />,
   },
   {
-    title: 'Ep4 Effect Hook',
-    path: '/react/ep4_effectHook',
-    element: <Ep4EffectHook />,
+    title: 'Ep4 UseEffect',
+    path: '/react/ep4_useEffect',
+    element: <Ep4UseEffect />,
+  },
+  {
+    title: 'Ep5 UseCallback and UseMemo',
+    path: '/react/ep4_useCallback_and_useMemo',
+    element: <Ep5UseCallbackAndUseMemo />,
   },
   {
     title: 'Ep1 Border',

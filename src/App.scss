@@ -1,5 +1,5 @@
 :root {
-  --sidebarWidth: 200px;
+  --sidebarWidth: 300px;
 }
 
 .app {
@@ -17,17 +17,16 @@
 
 a {
   color: #277bc0;
-}
 
-a:visited {
-  color: #277bc0;
+  &:visited {
+    color: #277bc0;
+  }
+
+  &:hover {
+    color: red;
+  }
 }
 
 .route {
-  /* flex-grow: 1; */
   width: calc(100% - var(--sidebarWidth));
-}
-
-.imgCode {
-  width: 800px;
 }
