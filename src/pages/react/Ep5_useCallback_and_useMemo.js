@@ -5,10 +5,12 @@ const List = ({getItemsCallback, getItemsMemo}) => {
   const [itemsCallback, setItemsCallback] = useState([])
 
   useEffect(() => {
+    console.log('useEffect1')
     setItemsMemo(getItemsMemo) // useMemo
   }, [getItemsMemo])
 
   useEffect(() => {
+    console.log('useEffect2')
     setItemsCallback(getItemsCallback(10)) // useCallback
   }, [getItemsCallback])
 

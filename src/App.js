@@ -12,6 +12,7 @@ import Ep2Draggable from './pages/react/Ep2_draggable'
 import Ep3UseReducer from './pages/react/Ep3_useReducer'
 import Ep4UseEffect from './pages/react/Ep4_useEffect'
 import Ep5UseCallbackAndUseMemo from './pages/react/Ep5_useCallback_and_useMemo'
+import Ep6UseImperativeHandle from './pages/react/Ep6_useImperativeHandle'
 import Ep1Border from './pages/css/Ep1_border'
 
 const pageList = [
@@ -42,8 +43,13 @@ const pageList = [
   },
   {
     title: 'Ep5 UseCallback and UseMemo',
-    path: '/react/ep4_useCallback_and_useMemo',
+    path: '/react/ep5_useCallback_and_useMemo',
     element: <Ep5UseCallbackAndUseMemo />,
+  },
+  {
+    title: 'Ep6 UseImperativeHandle',
+    path: '/react/ep6_useImperativeHandle',
+    element: <Ep6UseImperativeHandle />,
   },
   {
     title: 'Ep1 Border',
